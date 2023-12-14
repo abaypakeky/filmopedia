@@ -1,0 +1,45 @@
+.hero {
+    background-image: url('/filmopedia-fix/assets/img/backgroundHero.jpg'); /* Ganti dengan path gambar latar belakang yang sesuai */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden; /* Hindari overflow pada penambahan tinggi */
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    margin: 0 auto;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin: 0 auto;
+}
+
+.search-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) and (max-width:576.10px) {
+    .hero {
+        display: flex;
+        display: justify-content-center;
+    }
+    .hero h1 {
+        font-size: 2em; /* Atur ukuran huruf menjadi lebih kecil untuk layar handphone */
+        animation: ease-out;
+        transition: 0.7s;
+    }
+
+    .hero p {
+        font-size: 1em; /* Atur ukuran huruf menjadi lebih kecil untuk layar handphone */
+        animation: ease-out;
+        transition: 0.7s;
+    }
+    
+}
