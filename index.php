@@ -6,6 +6,11 @@ require('functions/functions.php');
 $conn = connectToDatabase();
 $films = query("SELECT * FROM film");
 
+// jika tombol cari ditekan
+if (isset($_POST['cari'])) {
+    $films = cari($_POST['keyword']);
+}
+
 
 ?>
 
@@ -28,9 +33,9 @@ $films = query("SELECT * FROM film");
                         Welcome
                     </h1>
                     <p>Filmopedia is a website that helps you to find the best films in the world.</p>
-                    <form class="d-flex align-items-center justify-content-center mx-2 p-5 opacity-75" action="" method="get">
-                        <input type="search" class="form-control-lg w-50 me-2 rounded-pill opacity-75" name="" id="searchFilm" placeholder="Search for a movie......">
-                        <button type="submit" class="btn btn-lg btn-dark rounded-pill">Search</button>
+                    <form class="d-flex align-items-center justify-content-center mx-2 p-5 opacity-75" action="" method="post">
+                        <input type="search" class="form-control-lg w-50 me-2 rounded-pill opacity-75" name="keyword" id="searchFilm" placeholder="Search for a movie......">
+                        <button type="submit" name="cari" class="btn btn-lg btn-dark rounded-pill">Search</button>
                     </form>
                 </div>
             </div>

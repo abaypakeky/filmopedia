@@ -95,3 +95,19 @@ function editFilms($films)
         return mysqli_affected_rows($conn);
     }
 }
+
+// Method untuk cari film
+function cari($keyword) {
+
+
+    $query = "SELECT * FROM film WHERE judul LIKE '%$keyword%'
+    
+            OR sutradara LIKE '%$keyword%'
+            OR actor LIKE '%$keyword%'
+            OR genre LIKE '%$keyword%'
+            OR tahun_rilis LIKE '%$keyword%'
+            
+            ";
+
+    return query($query);
+}
