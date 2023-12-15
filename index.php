@@ -46,17 +46,17 @@ if (isset($_POST['cari'])) {
     <div class="container-fluid">
         <section class="listFilm d-flex row justify-content-evenly">
             <?php foreach ($films as $row) : ?>
-            <div class="card my-3 p-0" style="width: 20rem;">
-                <img src="/filmopedia-fix/assets/img/catchMeIfYouCanCard.jpg" style="width: 100%;" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $row['judul']; ?></h5>
-                    <p>Genre: <?php echo $row['genre']; ?></p>
-                    <p>Aktor: <?php echo $row['actor']; ?></p>
-                    <p>Sutradara: <?php echo $row['sutradara']; ?></p>
-                    <p>Tahun Rilis: <?php echo $row['tahun_rilis']; ?></p>
-                    <a href="#" class="btn btn-dark">Details</a>
+                <div class="card my-3 p-0" style="width: 20rem;">
+                    <img src="assets/img/<?php echo $row['gambar']; ?>" style="width: 100%;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $row['judul']; ?></h5>
+                        <p>Genre: <?php echo $row['genre']; ?></p>
+                        <p>Aktor: <?php echo $row['actor']; ?></p>
+                        <p>Sutradara: <?php echo $row['sutradara']; ?></p>
+                        <p>Tahun Rilis: <?php echo $row['tahun_rilis']; ?></p>
+                        <a href="#" class="btn btn-dark">Details</a>
+                    </div>
                 </div>
-            </div>
             <?php endforeach; ?>
         </section>
     </div>

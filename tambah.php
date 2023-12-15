@@ -14,7 +14,7 @@
         } else {
             echo "
                 <script>
-                    alert('Data berhasil ditambahkan');
+                    alert('Data gagal ditambahkan');
                     document.location.href = 'admin.php';
                 </script>
             " ;
@@ -33,7 +33,7 @@
     <section class="form-edit">
         <div class="container">
             <h1 class="mt-5">Tambah Film</h1>
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data" >
                 <input type="hidden" name="id_film">
                 <div class="mb-3">
                     <label for="judul" class="form-label">Judul</label>
@@ -58,6 +58,10 @@
                 <div class="mb-3">
                     <label for="tahun_rilis" class="form-label">Tahun Rilis</label>
                     <input type="text" class="form-control" id="tahun_rilis" name="tahun_rilis">
+                </div>
+                <div class="mb-3">
+                    <label for="gambar" class="form-label">Gambar</label>
+                    <input type="file" class="form-control" id="gambar" name="gambar">
                 </div>
                 <button type="submit" class="btn btn-dark" name="submit">Submit</button>
                 <button type="reset" class="btn btn-secondary" name="Reset">Reset</button>

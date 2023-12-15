@@ -55,10 +55,61 @@ function addNewFilms($film)
         $sutradara = htmlspecialchars($film["sutradara"]);
         $tahun_rilis = htmlspecialchars($film["tahun_rilis"]);
 
-        $query = "INSERT INTO film (judul, sinopsis, genre, actor, sutradara, tahun_rilis) VALUES ('$judul', '$sinopsis', '$genre', '$actor', '$sutradara', '$tahun_rilis')";
+        // Upload gambar
+        $gambar = upload();
+
+        if (!$gambar) {
+            return false;
+        }
+
+        $query = "INSERT INTO film (judul, sinopsis, genre, actor, sutradara, tahun_rilis, gambar) VALUES ('$judul', '$sinopsis', '$genre', '$actor', '$sutradara', '$tahun_rilis', '$gambar')";
         mysqli_query($conn, $query);
         return mysqli_affected_rows($conn);
     }
+}
+
+// Method untuk upload Gambar
+function upload()
+{
+    $namaFile = $_FILES['gambar']['name'];
+    $ukuranFile = $_FILES['gambar']['size'];
+    $error =  $_FILES['gambar']['error'];
+    $tmpName = $_FILES['gambar']['tmp_name'];
+
+    // cek apakah gambar tidak diupload
+
+    if ($error === 4) {
+        echo "
+        <script> alert('Choose Image!');</script>
+        ";
+
+        return false;
+    }
+
+    // Cek apakah yang diuplaod adalah gambar
+    $imgExtension = ['jpg', 'jpeg', 'png'];
+    $extension = explode('.', $namaFile);
+    $extension = strtolower(end($extension));
+
+    if (!in_array($extension, $imgExtension)) {
+        echo "
+        <script> alert('yang anda upload bukan gambar');</script>
+        ";
+    }
+
+    // Cek jika ukuran gambar terlalu besar
+    if ($ukuranFile > 10000024) {
+        echo "
+        <script> alert('ukuran gambar terlalu besar');</script>
+        ";
+
+        return false;
+    }
+
+    // Penguploadan gambar
+    move_uploaded_file($tmpName, 'assets/img/'.$namaFile);
+
+    return $namaFile;
 }
 
 // Method Untuk Menghapus Data
@@ -88,8 +139,16 @@ function editFilms($films)
         $actor = htmlspecialchars($films["actor"]);
         $sutradara = htmlspecialchars($films["sutradara"]);
         $tahun_rilis = htmlspecialchars($films["tahun_rilis"]);
+        $gambarLama = ($films["gambarLama"]);
 
-        $query = "UPDATE film SET judul = '$judul', sinopsis = '$sinopsis', genre = '$genre', actor = '$actor', sutradara = '$sutradara', tahun_rilis = '$tahun_rilis' WHERE id_film = '$id_film'";
+        // cek apakah admin pilih gambar baru atau tidak
+        if ($_FILES['gambar']['error'] === 4) {
+            $gambar = $gambarLama;
+        } else {
+            $gambar = upload();
+        }
+
+        $query = "UPDATE film SET judul = '$judul', sinopsis = '$sinopsis', genre = '$genre', actor = '$actor', sutradara = '$sutradara', tahun_rilis = '$tahun_rilis', gambar = '$gambar' WHERE id_film = '$id_film'";
         mysqli_query($conn, $query);
 
         return mysqli_affected_rows($conn);
@@ -97,11 +156,12 @@ function editFilms($films)
 }
 
 // Method untuk cari film
-function cari($keyword) {
+function cari($keyword)
+{
 
 
     $query = "SELECT * FROM film WHERE judul LIKE '%$keyword%'
-    
+
             OR sutradara LIKE '%$keyword%'
             OR actor LIKE '%$keyword%'
             OR genre LIKE '%$keyword%'

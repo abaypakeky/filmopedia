@@ -40,8 +40,9 @@ if (isset($_POST["submit"])) {
     <section class="form-edit">
         <div class="container">
             <h1 class="mt-5">Edit Data Film</h1>
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_film" id="id_film" value="<?= $films["id_film"]; ?>" >
+                <input type="hidden" name="gambarLama" id="gambarLama" value="<?= $films["gambar"]; ?>" >
                 <div class="mb-3">
                     <label for="judul" class="form-label">Judul</label>
                     <input type="text" class="form-control" id="judul" name="judul" value="<?= $films["judul"]; ?>" required>
@@ -65,6 +66,11 @@ if (isset($_POST["submit"])) {
                 <div class="mb-3">
                     <label for="tahun_rilis" class="form-label">Tahun Rilis</label>
                     <input type="text" class="form-control" id="tahun_rilis" name="tahun_rilis" value="<?= $films["tahun_rilis"]; ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="gambar" class="form-label">Gambar</label><br>
+                    <img src="assets/img/<?= $films["gambar"]; ?>" style="width: 10%;" alt=""><br>
+                    <input type="file" class="form-control" id="gambar" name="gambar">
                 </div>
                 <button type="submit" class="btn btn-dark" name="submit">Submit</button>
                 <button type="reset" class="btn btn-secondary" name="Reset">Reset</button>
