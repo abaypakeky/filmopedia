@@ -32,7 +32,7 @@
 <body>
     <section class="form-edit">
         <div class="container">
-            <h1 class="mt-5">Edit Data Film</h1>
+            <h1 class="mt-5">Tambah Film</h1>
             <form action="" method="post">
                 <input type="hidden" name="id_film">
                 <div class="mb-3">
