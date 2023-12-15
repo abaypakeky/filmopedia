@@ -6,7 +6,7 @@ $conn = connectToDatabase();
 $id_film = $_GET['id_film'];
 global $id_film;
 
-if (deletesFilm($id_film) > 0) {
+if (deletesFilm("$id_film") > 0) {
     echo "<script>
             alert('Data berhasil dihapus');
             document.location.href = 'admin.php';

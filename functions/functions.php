@@ -41,7 +41,7 @@ function addNewFilms($films)
         $sutradara = htmlspecialchars($films["sutradara"]);
         $tahun_rilis = htmlspecialchars($films["tahun_rilis"]);
 
-        $query = "INSERT INTO film (judul, sinopsis, genre, actor, sutradara,) VALUES ('$judul', '$sinopsis', '$genre', '$actor', '$sutradara', '$tahun_rilis')";
+        $query = "INSERT INTO film (judul, sinopsis, genre, actor, sutradara, tahun_rilisp) VALUES ('$judul', '$sinopsis', '$genre', '$actor', '$sutradara', '$tahun_rilis')";
         mysqli_query($conn, $query);
         return mysqli_affected_rows($conn);
     }
@@ -55,6 +55,6 @@ function deletesFilm($id_film){
 
     $query = "DELETE FROM film WHERE id_film = '$id_film' " ;
     mysqli_query($conn, $query);
-    
+
     return mysqli_affected_rows($conn);
 }
