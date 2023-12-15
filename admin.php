@@ -48,7 +48,7 @@ $films = query("SELECT * FROM film");
                         <p>Aktor: <?php echo $row['actor']; ?></p>
                         <p>Sutradara: <?php echo $row['sutradara']; ?></p>
                         <p>Tahun Rilis: <?php echo $row['tahun_rilis']; ?></p>
-                        <a href="edit.php" class="btn btn-dark w-25">Edit</a>
+                        <a href="edit.php?id_film=<?= $row  ['id_film']; ?>" onclick="return confirm('Konfirmasi Edit Film');" class="btn btn-dark w-25">Edit</a>
                         <a href="hapus.php?id_film=<?= $row  ['id_film']; ?>" onclick="return confirm('Konfirmasi Hapus Film');" class="btn btn-dark w-25"> Hapus </a>
                     </div>
                 </div>
