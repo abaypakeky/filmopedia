@@ -28,7 +28,7 @@
                     <a class="nav-link mx-2" href="#">Movies</a>
                 </li>
                 <li class="nav-item d-none d-lg-block fw-bolder fs-4 m-auto">
-                    <a class="nav-link mx-2" href="#" style="font-size:larger;" >
+                    <a class="nav-link mx-2" href="#" style="font-size:larger;">
                         FILMOPEDIA
                     </a>
                 </li>
