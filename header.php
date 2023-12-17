@@ -22,7 +22,7 @@
         <div class=" collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mx-auto ">
                 <li class="nav-item m-auto">
-                    <a class="nav-link mx-2 active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link mx-2 active" aria-current="page" href="index.php">Home</a>
                 </li>
                 <li class="nav-item m-auto">
                     <a class="nav-link mx-2" href="#">Movies</a>
@@ -35,13 +35,17 @@
                 <li class="nav-item m-auto">
                     <a class="nav-link mx-2" href="#">Info</a>
                 </li>
+                <li class="nav-item m-auto">
+                    <a class="nav-link mx-2" href="logout.php">log out</a>
+                </li>
                 <li class="nav-item dropdown m-auto">
                     <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Others
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Login</a></li>
-                        <li><a class="dropdown-item" href="#">Sign Up</a></li>
+                        <li><a class="dropdown-item" href="login.php">Login</a></li>
+                        <li><a class="dropdown-item" href="register.php">Sign Up</a></li>
+                        <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                     </ul>
                 </li>
             </ul>

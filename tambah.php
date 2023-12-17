@@ -1,25 +1,31 @@
 <?php
+session_start();
 
-    include ('functions/functions.php');
-    $conn = connectToDatabase();
+if (!isset($_SESSION['login'])) {
+    header('location:login.php');
+}
 
-    if (isset($_POST['submit'])) {
-        if ( addNewFilms($_POST) > 0) {
-            echo "
+
+include('functions/functions.php');
+$conn = connectToDatabase();
+
+if (isset($_POST['submit'])) {
+    if (addNewFilms($_POST) > 0) {
+        echo "
                 <script>
                     alert('Data berhasil ditambahkan');
                     document.location.href = 'admin.php';
                 </script>
-            " ;
-        } else {
-            echo "
+            ";
+    } else {
+        echo "
                 <script>
                     alert('Data gagal ditambahkan');
                     document.location.href = 'admin.php';
                 </script>
-            " ;
-        }
+            ";
     }
+}
 
 ?>
 
@@ -33,7 +39,7 @@
     <section class="form-edit">
         <div class="container">
             <h1 class="mt-5">Tambah Film</h1>
-            <form action="" method="post" enctype="multipart/form-data" >
+            <form action="" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_film">
                 <div class="mb-3">
                     <label for="judul" class="form-label">Judul</label>

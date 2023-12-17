@@ -186,7 +186,7 @@ function register($data){
         echo "<script>
             alert('username sudah ada');
         </script>";
-        
+
         return false;
     }
 

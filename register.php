@@ -1,10 +1,16 @@
 <?php
+session_start();
+
+if (isset($_SESSION['login'])) {
+    header('location:admin.php');
+    exit();
+}
 
 require('functions/functions.php');
 $conn = connectToDatabase();
 include 'header.php';
 
-if (isset($_POST["register"])){
+if (isset($_POST['register'])){
     if ( register($_POST) > 0){
         echo "<script>
             alert('Register Complete');

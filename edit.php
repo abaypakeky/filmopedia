@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['login'])) {
+    header('location:login.php');
+}
+
 
 include("header.php");
 require('functions/functions.php');
@@ -6,7 +12,7 @@ $conn = connectToDatabase();
 
 
 // Ambil data pada URL
-$id_film = $_GET['id_film'] ;
+$id_film = $_GET['id_film'];
 $films = query("SELECT * FROM film WHERE id_film = '$id_film'")[0];
 
 
@@ -41,8 +47,8 @@ if (isset($_POST["submit"])) {
         <div class="container">
             <h1 class="mt-5">Edit Data Film</h1>
             <form action="" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id_film" id="id_film" value="<?= $films["id_film"]; ?>" >
-                <input type="hidden" name="gambarLama" id="gambarLama" value="<?= $films["gambar"]; ?>" >
+                <input type="hidden" name="id_film" id="id_film" value="<?= $films["id_film"]; ?>">
+                <input type="hidden" name="gambarLama" id="gambarLama" value="<?= $films["gambar"]; ?>">
                 <div class="mb-3">
                     <label for="judul" class="form-label">Judul</label>
                     <input type="text" class="form-control" id="judul" name="judul" value="<?= $films["judul"]; ?>" required>

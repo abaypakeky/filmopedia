@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (isset($_SESSION['login'])) {
+    header('location:admin.php');
+    exit();
+}
 
 require('functions/functions.php');
 $conn = connectToDatabase();
@@ -17,6 +23,11 @@ if (isset($_POST['login'])) {
         // cek password
         $row = mysqli_fetch_assoc($result);
         if (password_verify($password, $row['password'])) {
+
+            //Set session
+            $_SESSION['login'] = true;
+
+
             header("location:admin.php");
             exit;
         }
