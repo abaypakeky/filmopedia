@@ -10,3 +10,8 @@
 Website ini merupakan website movies database yang menampilkan data-data yang terdapat didalam film.
 pada halaman home visittor bisa melihat detail informasi dari sebuah film, dan pda halaman admin memilik otoriras
 untuk mengubah dan menghapus data film.
+
+## Requirements
+- Perangkat yang bisa mengakses web browser
+- Web Brwoser
+- 
