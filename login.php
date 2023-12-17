@@ -4,6 +4,27 @@ require('functions/functions.php');
 $conn = connectToDatabase();
 include 'header.php';
 
+if (isset($_POST['login'])) {
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username' ");
+
+    // Cek username
+    if (mysqli_num_rows($result) === 1) {
+
+        // cek password
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($password, $row['password'])) {
+            header("location:admin.php");
+            exit;
+        }
+    }
+
+    $error = true;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +43,11 @@ include 'header.php';
                 <div class="card">
                     <div class="card-body">
                         <h2 class="text-center">Login</h2>
+                        <?php if (isset($error)) : ?>
+                            <div class="alert alert-danger" role="alert">
+                                <p style="font-style: italic;" >username / password salah</p>
+                            </div>
+                        <?php endif; ?>
                         <form action="" method="post">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
@@ -35,7 +61,7 @@ include 'header.php';
                                 <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
                                 <label class="form-check-label" for="rememberMe">Remember me</label>
                             </div>
-                            <button type="submit" class="btn btn-dark" name="submit">Login</button>
+                            <button type="submit" class="btn btn-dark" name="login">Login</button>
                             <p class="mt-3">Don't have an account? <a href="register.php">Register</a></p>
                         </form>
                     </div>
@@ -44,7 +70,7 @@ include 'header.php';
         </div>
     </div>
 
-    
+
 </body>
 
 </html>

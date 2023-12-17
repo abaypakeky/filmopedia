@@ -4,6 +4,16 @@ require('functions/functions.php');
 $conn = connectToDatabase();
 include 'header.php';
 
+if (isset($_POST["register"])){
+    if ( register($_POST) > 0){
+        echo "<script>
+            alert('Register Complete');
+        </script>";
+    } else {
+        echo mysqli_errno($conn);
+    }
+}
+
 ?>
 
 
@@ -40,7 +50,7 @@ include 'header.php';
                                 <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
                                 <label class="form-check-label" for="rememberMe">Remember me</label>
                             </div>
-                            <button type="submit" class="btn btn-dark" name="submit">Register</button>
+                            <button type="submit" class="btn btn-dark" name="register">Register</button>
                             <p class="mt-3">Already have an account? <a href="login.php">Login</a></p>
                         </form>
                     </div>
