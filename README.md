@@ -43,7 +43,6 @@ untuk mengubah dan menghapus data film.
 ## Installation
 
 Clone Repository
-
 ```bash
   git clone https://github.com/abaypakeky/filmopedia-fix.git
 ```
@@ -52,8 +51,18 @@ Pergi ke directory Repository yang sudah di clone
 ```bash
   cd c:/xampp/htdocs/filmopedia-fix
 ```
+
 Buka Aplikasi XAMPP Ceklis pada bagian Apache dan MySql
-![image](https://github.com/abaypakeky/filmopedia-fix/assets/120354958/0abe8d95-0a28-4c32-b65a-9a0d0dcd1bd8)
+![image](https://github.com/abaypakeky/filmopedia-fix/assets/120354958/ffc061b4-4049-4c4f-b622-ae0107c5de8f)
+
+Buka [Localhost Page](http://localhost/phpmyadmin/) pada Web Browser
+```
+(https://localhost/phpmyadmin)
+```
+![image](https://github.com/abaypakeky/filmopedia-fix/assets/120354958/c046d69a-5bb2-419a-8fcd-d2f426ec2ef8)
+
+
+
 
 
 
