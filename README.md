@@ -40,7 +40,23 @@ untuk mengubah dan menghapus data film.
 - [Bootstrap](https://getbootstrap.com/) : Sebagai Framework HTML, CSS,JavaScript untuk mempercepat proses pengembangan Web Responsive.
 - [Php](https://www.php.net/docs.php) : Sebagai bahasa pemrogaman untuk membangun sebuah Website menjadi Dinamis.
 
-  ##
+## Installation
+
+Clone Repository
+
+```bash
+  git clone https://github.com/abaypakeky/filmopedia-fix.git
+```
+
+Pergi ke directory Repository yang sudah di clone
+```bash
+  cd c:/xampp/htdocs/filmopedia-fix
+```
+Buka Aplikasi XAMPP Ceklis pada bagian Apache dan MySql
+![image](https://github.com/abaypakeky/filmopedia-fix/assets/120354958/0abe8d95-0a28-4c32-b65a-9a0d0dcd1bd8)
+
+
+
 
 
 
