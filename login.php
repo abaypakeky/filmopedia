@@ -1,14 +1,33 @@
 <?php
 session_start();
+require('functions/functions.php');
+$conn = connectToDatabase();
+include 'header.php';
 
+// Cek cookie
+if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
+    $id = $_COOKIE['id'];
+    $key = $_COOKIE['key'];
+
+    // ambil username berdasarkan id
+    $result = mysqli_query($conn, " SELECT username FROM user WHERE id = '$id' ");
+    $row = mysqli_fetch_assoc($result);
+
+    // cek cookie dan username
+    if ($key === hash('sha256', $row['username'])) {
+        $_SESSION['login'] = true;
+    }
+}
+
+
+
+//  Set session
 if (isset($_SESSION['login'])) {
     header('location:admin.php');
     exit();
 }
 
-require('functions/functions.php');
-$conn = connectToDatabase();
-include 'header.php';
+
 
 if (isset($_POST['login'])) {
 
@@ -26,6 +45,13 @@ if (isset($_POST['login'])) {
 
             //Set session
             $_SESSION['login'] = true;
+
+            // Cek remember me
+            if (isset($_POST['rememberMe'])) {
+                // buat cookie
+                setcookie('id', $row['id'], time() + 60);
+                setcookie('key', hash('sha256', $row['username']), time() + 60);
+            }
 
 
             header("location:admin.php");
@@ -56,7 +82,7 @@ if (isset($_POST['login'])) {
                         <h2 class="text-center">Login</h2>
                         <?php if (isset($error)) : ?>
                             <div class="alert alert-danger" role="alert">
-                                <p style="font-style: italic;" >username / password salah</p>
+                                <p style="font-style: italic;">username / password salah</p>
                             </div>
                         <?php endif; ?>
                         <form action="" method="post">
