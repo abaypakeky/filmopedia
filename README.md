@@ -20,7 +20,7 @@ Website ini merupakan website movies database yang menampilkan data-data yang te
 pada halaman home visittor bisa melihat detail informasi dari sebuah film, dan pda halaman admin memilik otoriras
 untuk mengubah dan menghapus data film.
 
-## Feutures
+## Features
 - Shows Data Films
 - Adding New Films
 - Edit Films Data
@@ -31,7 +31,16 @@ untuk mengubah dan menghapus data film.
 - Remember Me (For Login)
 
 ## Requirements
--
+- [Git](https://git-scm.com/) : Sebagai Version Control pada project yang sedang dibangun.
+- [VsCode](https://code.visualstudio.com/) : Sebagai Code Editor 
+- [XAMPP](https://www.apachefriends.org/index.html) : Sebagai media atau web server localhost yang bisa digunakan secara offline. 
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) : Hypertext Markup Language sebagai bahasa markup standar yang digunakan untuk membuat halaman website dan aplikasi web.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) : Cascading Style Sheets sebagai bahasa pemrograman yang digunakan untuk mengatur gaya tampilan website.
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) : Sebagai bahasa pemrogaman yang membuat interaktifitas pada tampilan website.
+- [Bootstrap](https://getbootstrap.com/) : Sebagai Framework HTML, CSS,JavaScript untuk mempercepat proses pengembangan Web Responsive.
+- [Php](https://www.php.net/docs.php) : Sebagai bahasa pemrogaman untuk membangun sebuah Website menjadi Dinamis.
+
+  ##
 
 
 
