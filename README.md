@@ -30,7 +30,9 @@ untuk mengubah dan menghapus data film.
 - Sessions And Cookie
 - Remember Me (For Login)
 
-## Tech
+## Requirements
+-
+
 
 
 
