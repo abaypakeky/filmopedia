@@ -61,6 +61,28 @@ Buka [Localhost Page](http://localhost/phpmyadmin/) pada Web Browser
 ```
 ![image](https://github.com/abaypakeky/filmopedia-fix/assets/120354958/c046d69a-5bb2-419a-8fcd-d2f426ec2ef8)
 
+Buat File database sesuai dengan nama database yang terdapat pada Repository
+```bash
+  CREATE DATABASE db_filmopedia;
+```
+
+Kemudian import file `db_filmopedia` pada database yang sudah dibuat
+![image](https://github.com/abaypakeky/filmopedia-fix/assets/120354958/6109b907-dba2-4384-9ff9-6a59a26d883a)
+
+Instalasi telah selesai, kemudian jalankan Project yang telah dibuat
+```bash
+  https://localhost/xampp/htdocs/filmopedia-fix/
+```
+
+Jika semua proses dilakukan dengan benar maka tampilan akan seperti gambar dibawah
+![image](https://github.com/abaypakeky/filmopedia-fix/assets/120354958/d4b4e8ae-03e6-470a-b9b4-a70c223d2163)
+
+## Authors
+* Aura Syaskia
+* Cut Siti Sarah
+* Jabal Akbar
+* M Akbar Zulfikar
+
 
 
 
