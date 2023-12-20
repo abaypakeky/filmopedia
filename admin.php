@@ -47,9 +47,10 @@ $films = query("SELECT * FROM film");
         <section class="listFilm d-flex row justify-content-evenly">
             <?php foreach ($films as $row) : ?>
                 <div class="card my-3 p-0" style="width: 20rem;">
-                    <img src="assets/img/<?php echo $row['gambar']; ?>" style="width: 100%;" class="card-img-top" alt="...">
+                    
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $row['judul']; ?></h5>
+                        <img src="assets/img/<?php echo $row['gambar']; ?>" style="width: 100%;" class="card-img-top" alt="...">
                         <p>Genre: <?php echo $row['genre']; ?></p>
                         <p>Aktor: <?php echo $row['actor']; ?></p>
                         <p>Sutradara: <?php echo $row['sutradara']; ?></p>
