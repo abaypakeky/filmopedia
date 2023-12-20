@@ -45,7 +45,7 @@ if (isset($_POST["submit"])) {
 <body>
     <section class="form-edit">
         <div class="container">
-            <h1 class="mt-5">Edit Data Film</h1>
+            <h1 class="mt-5">Edit Dataa Film</h1>
             <form action="" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_film" id="id_film" value="<?= $films["id_film"]; ?>">
                 <input type="hidden" name="gambarLama" id="gambarLama" value="<?= $films["gambar"]; ?>">
